@@ -25,7 +25,7 @@ var PulseDropper = class PulseDropper extends Dancer {
 
   }
 
-  pauseToggle() {
-    this.$node.toggleClass('practiceToggle');
-  }
+  // pauseToggle() {
+  //   this.$node.toggleClass('practiceToggle');
+  // }
 };
