@@ -28,10 +28,18 @@ $(document).ready(function() {
       $("body").height() * Math.random(),
       $("body").width() * Math.random(),
       //Math.random() * 1000
-      500
+      1000
     );
     $('body').append(dancer.$node);
     window.dancers.push(dancer);
   });
-});
 
+
+  $('.lineUp').on('click', function(event) {
+    $('.dancer').css('top', 555);
+    window.dancers.forEach(function(x) {
+      x.stepPosition = 0;
+    });
+  });
+
+});

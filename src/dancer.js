@@ -37,15 +37,23 @@ class Dancer {
     this.$node = $('<span class="dancer"></span>');
     this.timeBetweenSteps = timeBetweenSteps;
     this.setPosition(top, left);
+    this.isSynced = false;
+    //this.now = new Date();
+    //this.seconds = this.now.getSeconds() % 4;
     this.step();
   }
   step() {
     var context = this;
-    setTimeout(function() {
-      console.log('hello');
-      // debugger;
-      context.step();
-    }, context.timeBetweenSteps);
+    if (!this.isSynced) {
+      var now = new Date();
+      setTimeout(function() {
+        context.step();
+      }, 1000 - now.getMilliseconds() );
+    } else {
+      setTimeout(function() {
+        context.step();
+      }, context.timeBetweenSteps);
+    }
   }
   
   setPosition(top, left) {
