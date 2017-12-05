@@ -25,8 +25,63 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
-
-.spinningDancer{
+.pulse{
   border:10px solid blue;
+  display:block;
   position:absolute;
+}
+.pulseToggle {
+  -webkit-animation: scale 1s infinite linear;
+}
+
+@-webkit-keyframes scale{
+  0% {
+    -webkit-transform: scale(1);
+  }
+
+  25% {
+    -webkit-transform: scale(2);
+  }
+
+  50% {
+    -webkit-transform: scale(1);
+  }
+
+  75% {
+    -webkit-transform: scale(2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+  }
+}
+
+.rotate{
+  border:13px solid green;
+  border-radius: 0;
+  display:block;
+  position:absolute;
+}
+.rotateToggle {
+  -webkit-animation: rotation 1s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  25% {
+    -webkit-transform: rotate(90deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  75% {
+    -webkit-transform: rotate(-90deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+  }
 }

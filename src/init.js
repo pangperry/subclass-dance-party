@@ -34,12 +34,15 @@ $(document).ready(function() {
     window.dancers.push(dancer);
   });
 
+  $('.lineUp').on('click', lineUp);
 
-  $('.lineUp').on('click', function(event) {
-    $('.dancer').css('top', 555);
-    window.dancers.forEach(function(x) {
-      x.stepPosition = -2;
-    });
-  });
+  // $('.lineUp').on('click', function(event) {
+  //   $('.dancer').css('top', 555);
+  //   window.dancers.forEach(function(x) {
+  //     x.stepPosition = -2;
+  //     x.pauseToggle();
+  //     !x.paused && x.step();
+  //   });
+  // });
 
 });

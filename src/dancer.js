@@ -38,21 +38,25 @@ class Dancer {
     this.timeBetweenSteps = timeBetweenSteps;
     this.setPosition(top, left);
     this.isSynced = false;
+    this.paused = false;
     //this.now = new Date();
     //this.seconds = this.now.getSeconds() % 4;
     this.step();
   }
   step() {
-    var context = this;
-    if (!this.isSynced) {
-      var now = new Date();
-      setTimeout(function() {
-        context.step();
-      }, 1000 - now.getMilliseconds() );
-    } else {
-      setTimeout(function() {
-        context.step();
-      }, context.timeBetweenSteps);
+    if (!this.paused) {
+      var context = this;
+      if (!this.isSynced) {
+        var now = new Date();
+        setTimeout(function() {
+          context.step();
+        }, 1000 - now.getMilliseconds() );
+      } else {
+        setTimeout(function() {
+          context.step();
+        }, context.timeBetweenSteps);
+      }
+
     }
   }
   
@@ -62,6 +66,10 @@ class Dancer {
       left: left
     };
     this.$node.css(styleSettings);
+  }
+
+  pauseToggle() {
+    this.pause = !this.pause;
   }
 }
 
