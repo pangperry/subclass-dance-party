@@ -1,6 +1,8 @@
-var SlidingDancer = class BlinkyDancer extends Dancer {
+var SpinningDancer = class BlinkyDancer extends Dancer {
   constructor(top, left, timeBetweenSteps) {
     super(top, left, timeBetweenSteps);
+    this.$node = $('<span class="spinningDancer"></span>');
+    this.setPosition(top, left);
     this.stepPosition = 0;
     
   }
@@ -10,13 +12,13 @@ var SlidingDancer = class BlinkyDancer extends Dancer {
     super.step();
     if (this.stepPosition >= 0) {
       if (this.stepPosition % 4 === 0) {
-        this.$node.animate({ 'left': '+=60px' }, 250 );
+        this.$node.rotate(5);
       } else if (this.stepPosition % 4 === 1) {
-        this.$node.animate({ 'top': '+=60px' }, 250 );
+        this.$node.rotate(5);
       } else if (this.stepPosition % 4 === 2) {
-        this.$node.animate({ 'left': '-=60px' }, 250 );
+        this.$node.rotate(5);
       } else {
-        this.$node.animate({ 'top': '-=60px' }, 250 );    
+        this.$node.rotate(5);
       }
     }
   }

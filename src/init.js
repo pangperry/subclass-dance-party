@@ -38,7 +38,7 @@ $(document).ready(function() {
   $('.lineUp').on('click', function(event) {
     $('.dancer').css('top', 555);
     window.dancers.forEach(function(x) {
-      x.stepPosition = 0;
+      x.stepPosition = -2;
     });
   });
 
