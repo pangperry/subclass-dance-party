@@ -117,5 +117,35 @@ body, a:link, a:visited, a:active{
   }
 }
 
+.right{
+  border:13px solid pink;
+  border-radius: 0;
+  display:block;
+  position:absolute;
+}
 
+.rightToggle {
+  -webkit-animation: spinRight 1s infinite linear;
+}
+
+@-webkit-keyframes spinRight {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  25% {
+    -webkit-transform: rotate(90deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(180deg);
+  }
+
+  75% {
+    -webkit-transform: rotate(270deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
 
