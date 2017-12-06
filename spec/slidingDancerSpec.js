@@ -12,7 +12,7 @@ describe('slidingDancer', function() {
     expect(slidingDancer.$node).to.be.an.instanceof(jQuery);
   });
 
-  it('should have a step function that moves it 1/4 around a square', function() {
+  it('should have a step function that moves it 1/4 around a square each second', function() {
     var startY = slidingDancer.$node.css('top');
     var startX = slidingDancer.$node.css('left');
 
@@ -29,6 +29,19 @@ describe('slidingDancer', function() {
     expect(slidingDancer.$node.css('top')).to.equal(startY);
     expect(slidingDancer.$node.css('left')).to.equal(startX);
 
+  });
+
+  it('should stop when pauseToggle method is called (test not working)', function() {
+    var xPositions = new Set();
+    //slidingDancer.pauseToggle();
+
+    for (var i = 0; i < 12; i++) {
+      clock.tick(timeBetweenSteps);
+      //console.log(slidingDancer.$node.css('left'));
+      xPositions.add(slidingDancer.$node.css('left'));
+    }
+    expect(xPositions.size).to.equal(1);
+    
   });
 
   describe('dance', function() {

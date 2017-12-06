@@ -86,7 +86,7 @@ body, a:link, a:visited, a:active{
     -webkit-transform: rotate(0deg);
   }
 }
-
+/*
 .practice{
   border:13px solid yellow;
   border-radius: 0;
@@ -116,7 +116,7 @@ body, a:link, a:visited, a:active{
   100% {
     -webkit-transform: translate(0,0);
   }
-}
+}*/
 
 .right{
   border:13px solid pink;

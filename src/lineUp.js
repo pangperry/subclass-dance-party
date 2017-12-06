@@ -1,6 +1,6 @@
 var lineUp = function() {
 
-  var columns = 5;
+  var columns = 7;
   var rows = Math.ceil(dancers.length) / columns;
 
   var rowSpace = ($('body').width() - 10) / columns;
