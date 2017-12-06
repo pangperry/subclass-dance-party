@@ -60,12 +60,34 @@ class Dancer {
     }
   }
   
-  setPosition(top, left) {
+  setPosition(top, left, obj) {
     var styleSettings = {
       top: top,
       left: left
     };
-    this.$node.css(styleSettings);
+
+    if (!this.$node.height()) {    
+
+      this.$node.css(styleSettings);
+      this.$node.css(obj || {});
+
+    } else {
+      this.$node.animate(styleSettings);
+      this.$node.animate(obj || {});
+    }
+
+
+
+  }
+
+  resetPosition(top, left, obj) {
+    var styleSettings = {
+      top: top,
+      left: left
+    };
+    this.$node.animate(styleSettings);
+    this.$node.animate(obj || {});
+
   }
 
   pauseToggle() {

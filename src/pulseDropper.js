@@ -10,6 +10,7 @@ var PulseDropper = class PulseDropper extends Dancer {
   }    
 
   step() {
+    var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple'];
     var top = this.$node.css('top');
     var left = this.$node.css('left');
     this.stepPosition ++;
@@ -17,11 +18,11 @@ var PulseDropper = class PulseDropper extends Dancer {
     super.step();
 
     var dancer = new PulseDancer(top, left, 1000);
+    dancer.$node.css({'border-color': colors[this.stepPosition % colors.length]});
     $('body').append(dancer.$node);
     window.dancers.push(dancer);
 
-
-    this.$node.animate({ 'left': '+=30px' }, 250 );
+    this.$node.animate({ 'left': '+=40px' }, 250 );
 
   }
 
