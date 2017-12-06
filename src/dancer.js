@@ -91,7 +91,7 @@ class Dancer {
   }
 
   pauseToggle() {
-    this.pause = !this.pause;
+    this.paused = !this.paused;
   }
 }
 

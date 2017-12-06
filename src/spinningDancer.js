@@ -1,4 +1,4 @@
-var SpinningDancer = class BlinkyDancer extends Dancer {
+var SpinningDancer = class Spinning extends Dancer {
   constructor(top, left, timeBetweenSteps) {
     super(top, left, timeBetweenSteps);
     this.$node = $('<span class="spinningDancer"></span>');

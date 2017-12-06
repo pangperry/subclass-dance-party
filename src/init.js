@@ -36,6 +36,18 @@ $(document).ready(function() {
 
   $('.lineUp').on('click', lineUp);
 
+
+  $('.doTheTwist').on('click', doTheTwist);
+  // $('.doTheTwist').on('click', function() {
+  //   if (this.twist) {
+  //     doTheTwist();
+  //     something = !something
+  //   } else {
+  //     undoTheTwist();
+  //     something = !something;
+  //   }
+  // });
+
   // $('.lineUp').on('click', function(event) {
   //   $('.dancer').css('top', 555);
   //   window.dancers.forEach(function(x) {

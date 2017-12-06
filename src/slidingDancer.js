@@ -6,7 +6,7 @@ var SlidingDancer = class SlidingDancer extends Dancer {
   }
 
   step() {
-    if (!this.pause) {
+    if (!this.paused) {
       this.stepPosition ++;
       super.step();
       if (this.stepPosition >= 0) {
